@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    vector<pair<int,int>> vec;
+   
+    for(int i=0;i<n;i++)
+    {
+        int start;
+        int finish;
+        cin>>start>>finish;
+        vec.push_back(make_pair(finish,start));
+        
+    }
+    sort(vec.begin(),vec.end());
+    int prev = 0;
+    int act = 0;
+    for(auto i:vec)
+    {
+        if(i.second >= prev)
+        {
+            act++;
+            prev = i.first;
+        }
+    }
+    cout<<act;
+    return 0;
+}																																										
